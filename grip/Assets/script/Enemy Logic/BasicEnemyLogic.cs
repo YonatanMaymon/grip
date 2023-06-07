@@ -7,13 +7,11 @@ public class BasicEnemyLogic : MonoBehaviour
     
     public int maxHealth = 100;
     [HideInInspector] public float health;
-    [SerializeField] float knockback;
     [SerializeField] float spottingDistance;
     [SerializeField] float movementSpeed;
     [SerializeField] float colorDiraction = 0.2f;
     Rigidbody2D rb;
     private float timer;
-    public float dmgMulitiplyer;
     private float distance;
     [SerializeField] Color dmgColor; 
     private Renderer objectRenderer;
@@ -62,8 +60,8 @@ public class BasicEnemyLogic : MonoBehaviour
         {
             if (Time.fixedTime - timer > 0.02)
             {
-                rb.AddForce((transform.position - Player.transform.position) * PlayerWeapon.rotationStrangth *knockback);
-                TakeDamage(PlayerWeapon.rotationStrangth*dmgMulitiplyer);
+                rb.AddForce((transform.position - Player.transform.position) * PlayerWeapon.rotationStrangth *PlayerWeapon.knockback);
+                TakeDamage(PlayerWeapon.rotationStrangth*PlayerWeapon.dmgMulitiplyer);
                 timer = Time.fixedTime;
             }
         }

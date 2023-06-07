@@ -11,6 +11,8 @@ public class SpinTool : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] AudioManager audioManager;
     [SerializeField] private float soundPitchMultyplayer;
+    public float knockback;
+    public float dmgMulitiplyer;
     string soundName = "SwingWeapon";
     float rotation;
     [HideInInspector]  public float rotationStrangth;
